@@ -8,7 +8,7 @@
     "web-dev-server": "node node_modules/webpack-dev-server/bin/webpack-dev-server.js --port 3000 --config web/webpack.config.dev.js --inline --hot --colors --quiet",
     "android": "node node_modules/react-native/local-cli/cli.js run-android",
     "format": "node node_modules/.bin/standard-format -w",
-    "link": "node node_modules/react-native/local-cli/cli.js link react-native-svg"
+    "link": "node node_modules/react-native/local-cli/cli.js link"
   },
   "dependencies": {
     "immutable": "^3.8.1",
@@ -20,7 +20,7 @@
     "react-native-drawer-layout": "^1.0.0",
     "react-native-navbar": "^1.5.0",
     "react-native-router-flux": "^3.32.0",
-    "react-native-svg": "^4.0.0-rc",
+    "react-native-svg": "git+https://github.com/magicismight/react-native-svg.git",
     "react-native-web": "0.0.39",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
