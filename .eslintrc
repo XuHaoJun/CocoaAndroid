@@ -1,0 +1,12 @@
+{
+  "parser": "babel-eslint",
+
+  "plugins": [
+    "react",
+    "react-native"
+  ],
+
+  "ecmaFeatures": {
+    "jsx": true
+  }
+}

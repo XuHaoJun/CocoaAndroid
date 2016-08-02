@@ -1,0 +1,52 @@
+{
+  "name": "CocoaAndroid",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "node node_modules/mocha/bin/mocha --recursive --compilers js:babel-register app/test",
+    "eslint": "node node_modules/eslint/bin/eslint.js app",
+    "web-dev-server": "node node_modules/webpack-dev-server/bin/webpack-dev-server.js --port 3000 --config web/webpack.config.dev.js --inline --hot --colors --quiet",
+    "android": "node node_modules/react-native/local-cli/cli.js run-android",
+    "format": "node node_modules/.bin/standard-format -w",
+    "link": "node node_modules/react-native/local-cli/cli.js link react-native-svg"
+  },
+  "dependencies": {
+    "immutable": "^3.8.1",
+    "react": "^15.2.1",
+    "react-immutable-render-mixin": "^0.9.7",
+    "react-native": "0.30.0",
+    "react-native-button": "^1.6.0",
+    "react-native-drawer": "^2.2.6",
+    "react-native-drawer-layout": "^1.0.0",
+    "react-native-navbar": "^1.5.0",
+    "react-native-router-flux": "^3.32.0",
+    "react-native-svg": "^4.0.0-rc",
+    "react-native-web": "0.0.39",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2",
+    "redux-immutable": "^3.0.6",
+    "redux-thunk": "^2.1.0",
+    "url-loader": "0.5.7",
+    "uuid": "^2.0.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.11.4",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-1": "^6.5.0",
+    "babel-runtime": "^6.11.6",
+    "deep-freeze": "0.0.1",
+    "eslint": "^3.2.0",
+    "eslint-plugin-react": "^5.2.2",
+    "eslint-plugin-react-native": "^1.2.0",
+    "expect": "^1.20.2",
+    "expect-immutable": "0.0.3",
+    "mocha": "^2.5.3",
+    "standard-format": "^2.2.2",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
