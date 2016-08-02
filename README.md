@@ -11,3 +11,11 @@ npm run android
 npm install -g react-native-cli
 react-native run-android
 ```
+
+# Requirment
+- Android SDK Build-tools version 23.0.1
+- Android 6.0 (API 23)
+- Android Support Repository
+
+# Troubleshooting
+- Error while uploading apk, try `adb reverse tcp:8081 tcp:8081`
