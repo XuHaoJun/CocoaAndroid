@@ -1,8 +1,17 @@
-import React, { Component, PropTypes } from 'react';
-import { Text, StyleSheet, TouchableHighlight, View, Dimensions, Image, TouchableOpacity, InteractionManager } from 'react-native'
+import React, {Component, PropTypes} from 'react';
+import {
+  Text,
+  StyleSheet,
+  TouchableHighlight,
+  View,
+  Dimensions,
+  Image,
+  TouchableOpacity,
+  InteractionManager
+} from 'react-native'
 import Drawer from 'react-native-drawer';
 import TabView from './TabView';
-import { Actions, DefaultRenderer } from 'react-native-router-flux';
+import {Actions, DefaultRenderer} from 'react-native-router-flux';
 import Button from 'react-native-button'
 import DrawerLayoutAndroid from 'react-native-drawer-layout'
 
@@ -22,9 +31,27 @@ class DrawerContent extends Component {
   render() {
     const drawer = this.props.drawer;
     return (
-      <View style={[styles.container, {backgroundColor: '#fcfcfc'}]}>
-        <Image style={{width: Dimensions.get('window').width / 5 * 3, height: 120, justifyContent: 'flex-end', paddingBottom: 10}} source={require('../img/kiki.jpg')}>
-          <Text style={{fontSize: 20, textAlign: 'left', color: '#fcfcfc', marginLeft: 10}}>
+      <View
+        style={[
+        styles.container, {
+          backgroundColor: '#fcfcfc'
+        }
+      ]}>
+        <Image
+          style={{
+          width: Dimensions.get('window').width / 5 * 3,
+          height: 120,
+          justifyContent: 'flex-end',
+          paddingBottom: 10
+        }}
+          source={require('../img/kiki.jpg')}>
+          <Text
+            style={{
+            fontSize: 20,
+            textAlign: 'left',
+            color: '#fcfcfc',
+            marginLeft: 10
+          }}>
             Cocoa
           </Text>
         </Image>
@@ -45,13 +72,11 @@ class DrawerContent extends Component {
 
 const DrawerContentHelp = (props, context) => {
   const drawer = context.drawer;
-  return (
-    <DrawerContent drawer={drawer} />
-  )
+  return (<DrawerContent drawer={drawer}/>)
 }
 
 DrawerContentHelp.contextTypes = {
-  drawer: React.PropTypes.object,
+  drawer: React.PropTypes.object
 };
 
 DrawerContentHelp.propTypes = {
@@ -65,20 +90,29 @@ export default class extends Component {
     const state = this.props.navigationState;
     const children = state.children;
     let navigationView = (
-    <View style={{flex: 1, backgroundColor: '#fff'}}>
-      <Text style={{margin: 10, fontSize: 15, textAlign: 'left'}}>I'm in the Drawer!</Text>
-    </View>
+      <View style={{
+        flex: 1,
+        backgroundColor: '#fff'
+      }}>
+        <Text
+          style={{
+          margin: 10,
+          fontSize: 15,
+          textAlign: 'left'
+        }}>I'm in the Drawer!</Text>
+      </View>
     )
     return (
       <DrawerLayoutAndroid
         ref="navigation"
         drawerPosition={DrawerLayoutAndroid.positions.Left}
         drawerWidth={Dimensions.get('window').width / 5 * 3}
-        onDrawerOpen={()=>Actions.refresh({key:state.key, open: true})}
-        onDrawerClose={()=>Actions.refresh({key:state.key, open: false})}
-        renderNavigationView={() => navigationView }
-      >
-        <DefaultRenderer navigationState={children[0]} onNavigate={this.props.onNavigate} />
+        onDrawerOpen={() => Actions.refresh({key: state.key, open: true})}
+        onDrawerClose={() => Actions.refresh({key: state.key, open: false})}
+        renderNavigationView={() => navigationView}>
+        <DefaultRenderer
+          navigationState={children[0]}
+          onNavigate={this.props.onNavigate}/>
       </DrawerLayoutAndroid>
     )
   }
@@ -91,25 +125,32 @@ export default class extends Component {
         ref="navigation"
         tweenDuration={100}
         open={state.open}
-        onOpen={()=>Actions.refresh({key:state.key, open: true})}
-        onClose={()=>Actions.refresh({key:state.key, open: false})}
+        onOpen={() => Actions.refresh({key: state.key, open: true})}
+        onClose={() => Actions.refresh({key: state.key, open: false})}
         type="overlay"
-        content={<DrawerContentHelp />}
+        content={< DrawerContentHelp />}
         tapToClose={true}
         openDrawerOffset={0.4}
         panCloseMask={0.4}
         negotiatePan={true}
-        styles={drawerStyles}
-      >
-        <DefaultRenderer navigationState={children[0]} onNavigate={this.props.onNavigate} />
+        styles={drawerStyles}>
+        <DefaultRenderer
+          navigationState={children[0]}
+          onNavigate={this.props.onNavigate}/>
       </Drawer>
     );
   }
 }
 
 const drawerStyles = {
-  drawer: { shadowColor: '#000000', shadowOpacity: 0.8, shadowRadius: 3},
-  main: {paddingLeft: 3},
+  drawer: {
+    shadowColor: '#000000',
+    shadowOpacity: 0.8,
+    shadowRadius: 3
+  },
+  main: {
+    paddingLeft: 3
+  }
 }
 
 const styles = StyleSheet.create({

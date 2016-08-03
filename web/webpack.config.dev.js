@@ -21,33 +21,29 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'src')
   },
-  entry: [
-    path.join(__dirname, '../index.web.js')
-  ],
+  entry: [path.join(__dirname, '../index.web.js')],
   module: {
     loaders: [
       {
         test: /\.js$/,
-        //exclude: /node_modules/,
-        //exclude: /(?!node_modules\/(react-native-button|react-native-drawer|react-native-navbar|react-native-drawer-layout|react-native-router-flux).*)node_modules.*/,
+        // exclude: /node_modules/, exclude:
+        // /(?!node_modules\/(react-native-button|react-native-drawer|react-native-navbar
+        // |react-native-drawer-layout|react-native-router-flux).*)node_modules.*/,
         include: includePaths,
         loader: 'babel-loader',
         query: {
           cacheDirectory: true,
           "presets": [
-            "es2015",
-            "stage-1",
-            "react"
+            "es2015", "stage-1", "react"
           ],
-          "plugins": [
-            "transform-decorators-legacy"
-          ]
+          "plugins": ["transform-decorators-legacy"]
         }
-      },
-      {
+      }, {
         test: /\.(gif|jpe?g|png|svg)$/,
         loader: 'url-loader',
-        query: { name: '[name].[hash:16].[ext]' }
+        query: {
+          name: '[name].[hash:16].[ext]'
+        }
       }
     ]
   },

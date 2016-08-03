@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { AppRegistry, StyleSheet, ListView, Text, View } from 'react-native'
+import React, {Component} from 'react'
+import {AppRegistry, StyleSheet, ListView, Text, View} from 'react-native'
 
 import immutable from 'immutable'
 
@@ -21,11 +21,22 @@ const styles = StyleSheet.create({
 })
 
 const countries = immutable.fromJS([
-  {name: 'China', population: '1,393,783,836'},
-  {name: 'India', population: '1,267,401,849'},
-  {name: 'U.S.A.', population: '322,583,006'},
-  {name: 'Indonesia', population: '252,812,245'},
-  {name: 'Brazil', population: '202,033,670'}
+  {
+    name: 'China',
+    population: '1,393,783,836'
+  }, {
+    name: 'India',
+    population: '1,267,401,849'
+  }, {
+    name: 'U.S.A.',
+    population: '322,583,006'
+  }, {
+    name: 'Indonesia',
+    population: '252,812,245'
+  }, {
+    name: 'Brazil',
+    population: '202,033,670'
+  }
 ])
 
 const Title = ({children}) => (
@@ -45,12 +56,10 @@ const Row = ({name, population}) => (
   </View>
 )
 
-const renderRow = (rowData) => (
-  <Row name={rowData.get('name')} population={rowData.get('population')} />
-)
+const renderRow = (rowData) => (<Row name={rowData.get('name')} population={rowData.get('population')}/>)
 
 class CountiesByPopulation extends Component {
-  constructor () {
+  constructor() {
     super()
     const ds = new ListView.DataSource({
       rowHasChanged: (r1, r2) => !immutable.is(r1, r2)
@@ -59,10 +68,11 @@ class CountiesByPopulation extends Component {
       dataSource: ds.cloneWithRows(countries.toArray())
     }
   }
-  render () {
-    return (
-      <ListView style={styles.list} dataSource={this.state.dataSource} renderRow={renderRow} />
-    )
+  render() {
+    return (<ListView
+      style={styles.list}
+      dataSource={this.state.dataSource}
+      renderRow={renderRow}/>)
   }
 }
 

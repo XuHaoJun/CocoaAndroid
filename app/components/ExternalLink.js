@@ -1,5 +1,5 @@
-import React, { Component, PropTypes } from 'react'
-import { Text, Linking, Platform, TouchableHighlight } from 'react-native'
+import React, {Component, PropTypes} from 'react'
+import {Text, Linking, Platform, TouchableHighlight} from 'react-native'
 
 export default class ExternalLink extends Component {
   constructor(props) {
@@ -20,15 +20,11 @@ export default class ExternalLink extends Component {
 
   render() {
     const style = this.props.style && {
-      color: '#2980b9',
+      color: '#2980b9'
     };
     if (Platform.OS === 'web') {
-      return (
-        <Text {...this.props} accessibilityRole='link' target='_blank' style={style} />
-      )
+      return (<Text {...this.props} accessibilityRole='link' target='_blank' style={style}/>)
     }
-    return (
-      <TouchableHighlight {...this.props} onPress={this.onPress} style={style} />
-    )
+    return (<TouchableHighlight {...this.props} onPress={this.onPress} style={style}/>)
   }
 }

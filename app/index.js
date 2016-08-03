@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Provider } from 'react-redux'
+import React, {Component} from 'react'
+import {Provider} from 'react-redux'
 import configureStore from './store/configureStore'
 import App from './containers/App'
 import Immutable from 'immutable'
@@ -7,7 +7,7 @@ import Immutable from 'immutable'
 const stateBefore = {
   'node_0': {
     id: 'node_0',
-    childIds: [ 'node_1' ]
+    childIds: ['node_1']
   },
   'node_1': {
     id: 'node_1',
@@ -15,7 +15,7 @@ const stateBefore = {
   },
   'node_2': {
     id: 'node_2',
-    childIds: [ 'node_3', 'node_4' ]
+    childIds: ['node_3', 'node_4']
   },
   'node_3': {
     id: 'node_3',
@@ -29,11 +29,11 @@ const stateBefore = {
 const store = configureStore(Immutable.fromJS({omino: stateBefore}))
 
 class Root extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
   }
 
-  render () {
+  render() {
     return (
       <Provider store={store}>
         <App/>

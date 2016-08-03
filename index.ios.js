@@ -4,11 +4,11 @@
  * @flow
  */
 
-import React, { Component } from 'react'
-import { AppRegistry, StyleSheet, Text, View } from 'react-native'
+import React, {Component} from 'react'
+import {AppRegistry, StyleSheet, Text, View} from 'react-native'
 
 class CocoaAndroid extends Component {
-  render () {
+  render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
@@ -18,8 +18,8 @@ class CocoaAndroid extends Component {
           To get started, edit index.ios.js
         </Text>
         <Text style={styles.instructions}>
-          Press Cmd+R to reload,
-          {'\n'} Cmd+D or shake for dev menu
+          Press Cmd+R to reload, {'\n'}
+          Cmd+D or shake for dev menu
         </Text>
       </View>
     )

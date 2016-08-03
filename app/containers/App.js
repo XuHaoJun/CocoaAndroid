@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { ToastAndroid, Platform, BackAndroid } from 'react-native'
-import { Scene, Router, Actions, Reducer } from 'react-native-router-flux'
+import React, {Component} from 'react'
+import {ToastAndroid, Platform, BackAndroid} from 'react-native'
+import {Scene, Router, Actions, Reducer} from 'react-native-router-flux'
 import AboutPage from '../components/AboutPage'
 import DeviceManagerPage from '../components/DeviceManagerPage'
 import OminoEditorPage from './OminoEditorPage'
@@ -23,13 +23,13 @@ export default class App extends Component {
   }
 
   reducerCreate(params) {
-      const defaultReducer = new Reducer(params);
-      return (state, action) => {
-        if (state !== null ) {
-          this.routerIndex = state.index
-        }
-        return defaultReducer(state, action);
+    const defaultReducer = new Reducer(params);
+    return (state, action) => {
+      if (state !== null) {
+        this.routerIndex = state.index
       }
+      return defaultReducer(state, action);
+    }
   }
 
   componentWillUnmount() {
@@ -47,15 +47,17 @@ export default class App extends Component {
   render() {
     if (Platform.OS === 'web') {
       return (
-        <View> not support web </View>
+        <View>
+          not support web
+        </View>
       )
     }
     return (
-      <Router createReducer={this.reducerCreate} >
+      <Router createReducer={this.reducerCreate}>
         <Scene key='root' hideTabBar hideNavBar>
-          <Scene key='ominoEditorPage' component={OminoEditorPage} initial />
-          <Scene key='deviceManagerPage' component={DeviceManagerPage} />
-          <Scene key='aboutPage' component={AboutPage} />
+          <Scene key='ominoEditorPage' component={OminoEditorPage} initial/>
+          <Scene key='deviceManagerPage' component={DeviceManagerPage}/>
+          <Scene key='aboutPage' component={AboutPage}/>
         </Scene>
       </Router>
     )
