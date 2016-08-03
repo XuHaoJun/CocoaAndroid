@@ -1,0 +1,14 @@
+{
+  "defs": [
+    "ecma6"
+  ],
+  "loadEagerly": [
+    "app/**/*.js"
+  ],
+  "dontLoad": [
+    "node_modules/**"
+  ],
+  "plugins": {
+    "node": true
+  }
+}

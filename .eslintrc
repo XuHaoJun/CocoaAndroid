@@ -1,12 +1,16 @@
 {
   "parser": "babel-eslint",
-
   "plugins": [
     "react",
     "react-native"
   ],
-
   "ecmaFeatures": {
     "jsx": true
+  },
+  "rules": {
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/jsx-indent-props": [2, 2],
+    "react/jsx-indent": [2, 2]
   }
 }
