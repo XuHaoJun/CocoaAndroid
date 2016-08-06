@@ -3,7 +3,7 @@
 root = true
 
 # 对所有文件生效
-[*]
+[*.js]
 charset = utf-8
 indent_style = space
 indent_size = 2

@@ -14,53 +14,10 @@ import {
 import {connect} from 'react-redux'
 import {shouldComponentUpdate} from 'react-immutable-render-mixin'
 import {Actions as RouterActions} from 'react-native-router-flux'
-import Svg, {
-  Circle,
-  Ellipse,
-  G,
-  LinearGradient,
-  RadialGradient,
-  Line,
-  Path,
-  Polygon,
-  Polyline,
-  Rect,
-  Symbol,
-  Use,
-  Defs,
-  Stop
-} from 'react-native-svg';
+import Brick from '../components/Brick'
+import DragExample from '../components/DragExample'
 import * as actions from '../actions/omino'
 import CustomToolbar from '../components/CustomToolbar'
-
-class Brick extends Component {
-  constructor(props) {
-    super(props)
-    this.shouldComponentUpdate = shouldComponentUpdate.bind(this)
-    this.handleDrawerTabClick = this.handleDrawerTabClick.bind(this)
-  }
-
-  render() {
-    return (
-      <View
-        style={{
-        flex: 1,
-        marginLeft: 20,
-        'marginTop': 20
-      }}>
-        <View style={styles.children}>
-          <Text>1</Text>
-          <View style={styles.children}>
-            <Text>2</Text>
-            <View style={styles.children}>
-              <Text>3</Text>
-            </View>
-          </View>
-        </View>
-      </View>
-    )
-  }
-}
 
 class OminoEditorPage extends Component {
   constructor(props) {
@@ -150,25 +107,9 @@ class OminoEditorPage extends Component {
             title='OminoEditor'
             navIcon={require('../img/menu.png')}
             onIconClicked={this.onIconClicked}/>
+
+          <Brick/>
           <View style={styles.container}>
-            <Svg height="100" width="100">
-              <Circle
-                onPress={() => alert('Press on Circle')}
-                cx="50"
-                cy="50"
-                r="45"
-                stroke="blue"
-                strokeWidth="2.5"
-                fill="green"/>
-              <Rect
-                x="15"
-                y="15"
-                width="70"
-                height="70"
-                stroke="red"
-                strokeWidth="2"
-                fill="yellow"/>
-            </Svg>
             <Text style={styles.welcome}>
               Welcome to React Native!
             </Text>

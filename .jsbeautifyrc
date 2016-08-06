@@ -10,7 +10,8 @@
     "indent_size": 2,
     "max_preserve_newlines": 0,
     "preserve_newlines": true,
-    "unformatted": ["a", "span", "img", "code", "pre", "sub", "sup", "em", "strong", "b", "i", "u", "strike", "big",
+    "unformatted": ["a", "span", "img", "code", "pre", "sub", "sup", "em",
+      "strong", "b", "i", "u", "strike", "big",
       "small", "pre", "h1", "h2", "h3", "h4", "h5", "h6"
     ],
     "wrap_line_length": 120

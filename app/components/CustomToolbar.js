@@ -28,7 +28,9 @@ class CustomToolbar extends Component {
   }
 
   getNavIcon() {
-    return this.props.navIcon && require('../img/icon_left.png')
+    return this.props.navIcon
+      ? this.props.navIcon
+      : require('../img/icon_left.png')
   }
 
   renderLeftButton() {
