@@ -65,7 +65,7 @@ class CustomToolbar extends Component {
     return (<NavigationBar
       leftButton={this.renderLeftButton()}
       style={styles.toolbar}
-      title={this.props.title}
+      title={{title: this.props.title}}
       tintColor='#fff'/>)
   }
 }

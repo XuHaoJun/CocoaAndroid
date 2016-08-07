@@ -14,10 +14,13 @@ import {
 import {connect} from 'react-redux'
 import {shouldComponentUpdate} from 'react-immutable-render-mixin'
 import {Actions as RouterActions} from 'react-native-router-flux'
+import Svg from 'react-native-svg'
 import Brick from '../components/Brick'
 import DragExample from '../components/DragExample'
 import * as actions from '../actions/omino'
 import CustomToolbar from '../components/CustomToolbar'
+import {samples} from '../components/PanResponder'
+const SVGPan = samples[0]
 
 class OminoEditorPage extends Component {
   constructor(props) {
@@ -91,7 +94,7 @@ class OminoEditorPage extends Component {
     )
   }
 
-  render() {
+  renderfoo() {
     return (
       <DrawerLayoutAndroid
         ref='drawer'
@@ -107,7 +110,6 @@ class OminoEditorPage extends Component {
             title='OminoEditor'
             navIcon={require('../img/menu.png')}
             onIconClicked={this.onIconClicked}/>
-
           <Brick/>
           <View style={styles.container}>
             <Text style={styles.welcome}>
@@ -128,6 +130,30 @@ class OminoEditorPage extends Component {
               OS: {Platform.OS}
             </Text>
           </View>
+        </View>
+      </DrawerLayoutAndroid>
+    )
+  }
+
+  render() {
+    return (
+      <DrawerLayoutAndroid
+        ref='drawer'
+        drawerWidth={Dimensions.get('window').width / 5 * 3}
+        drawerPosition={DrawerLayoutAndroid.positions.Left}
+        renderNavigationView={this.renderNavigationView}>
+        <StatusBar backgroundColor="black"/>
+        <View style={{
+          flex: 1
+        }}>
+          <CustomToolbar
+            title='OminoEditor'
+            navIcon={require('../img/menu.png')}
+            onIconClicked={this.onIconClicked}/>
+          <Svg width="500" height="500">
+            <Brick x={0} y={0} color="blue" />
+            <Brick x={0} y={50} color="red" />
+          </Svg>
         </View>
       </DrawerLayoutAndroid>
     )
