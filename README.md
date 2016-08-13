@@ -1,5 +1,4 @@
-# CocoaAndroid
-[![Build Status](https://travis-ci.org/XuHaoJun/CocoaAndroid.svg?branch=master)](https://travis-ci.org/XuHaoJun/CocoaAndroid)
+# CocoaAndroid [![Build Status](https://travis-ci.org/XuHaoJun/CocoaAndroid.svg?branch=master)](https://travis-ci.org/XuHaoJun/CocoaAndroid)
 
 ## Install
 ```
